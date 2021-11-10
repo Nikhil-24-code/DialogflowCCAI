@@ -6,7 +6,7 @@
  
  // Enter your calendar ID below and service account JSON below
  const calendarId = "<Add your calendar ID here>"
- const serviceAccount = {<Add your service account details here>}; // Starts with {"type": "service_account",...
+ const serviceAccount = {<Add your service account details here>}; // Starts with {"type": "service_account",... // Remove the complete block and paste the code from the service account Key here
  
  // Set up Google Calendar Service account credentials
  const serviceAccountAuth = new google.auth.JWT({
@@ -18,8 +18,8 @@
  const calendar = google.calendar('v3');
  process.env.DEBUG = 'dialogflow:*'; // enables lib debugging statements
  
- const timeZone = 'Asia/Kolkata';
- const timeZoneOffset = '+5:30';
+ const timeZone = 'Asia/Kolkata'; // you can mention any timezone like Africa/Asmara OR America/Buenos_Aire
+ const timeZoneOffset = '+5:30'; // timeoffset will be with respect to the timezone you choose to make
  
  exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response) => {
    const agent = new WebhookClient({ request, response });
